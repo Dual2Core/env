@@ -1,16 +1,18 @@
+#!/usr/bin/env bash
 ##############################################################################
 #     Installation script for full developer environment on Ubuntu 18.04     #
-#	      Copyright 2018 Patryk Kobielak All Rights Reserved             #
+#	          Copyright 2018 Patryk Kobielak All Rights Reserved             #
 ##############################################################################
 
 # Get required packages
-sudo apt install git tmux curl zsh vim
+sudo apt install git tmux curl zsh vim python3 python3-pip
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.github.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+chsh -s $(which zsh)
+bash install.sh
+
 
 # Install oh-my-tmux
-cd
 git clone https://github.com/gpakosz/.tmux.git
 ln -s -f .tmux/.tmux.conf
 cp .tmux/.tmux.conf.local .
@@ -19,4 +21,3 @@ cp .tmux/.tmux.conf.local .
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 echo "Add zsh-autosuggestions to plugin list in .zshrc"
 echo "\tvim ~/.zshrc"
-
