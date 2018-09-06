@@ -3,9 +3,15 @@
 #     Installation script for full developer environment on Ubuntu 18.04     #
 #	          Copyright 2018 Patryk Kobielak All Rights Reserved             #
 ##############################################################################
+# IMPORTANT NOTE: Remember to run with 'sudo'
+
+set -e # Exit on fail
+set -x # Print command before execution
+
 
 # Get required packages
-sudo apt install git tmux curl zsh vim python3 python3-pip
+apt-get update
+apt-get -y install git tmux curl zsh vim python3 python3-pip
 
 # Install oh-my-zsh
 chsh -s $(which zsh)

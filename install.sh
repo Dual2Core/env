@@ -110,5 +110,3 @@ main() {
   echo ''
   printf "${NORMAL}"
 }
-
-main
