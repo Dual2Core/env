@@ -8,7 +8,6 @@
 set -e # Exit on fail
 set -x # Print command before execution
 
-unalias cp
 
 # Get required packages
 apt-get update
@@ -17,7 +16,6 @@ apt-get -y install git tmux curl zsh vim python3 python3-pip
 # Install oh-my-zsh
 chsh -s $(which zsh)
 bash install.sh
-
 
 # Copy oh-my-tmux configuration
 cp -f .tmux.conf ~/.tmux.conf
