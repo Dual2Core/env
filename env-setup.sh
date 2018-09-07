@@ -18,7 +18,7 @@ chsh -s $(which zsh)
 bash install.sh
 
 # Copy oh-my-tmux configuration
-cp -f .tmux.conf ~/.tmux.conf
+cp -rf .tmux/.tmux.conf ~/.tmux.conf
 cp -f .tmux.conf.local ~/.tmux.conf.local
 
 # Install zsh-autosuggestions
