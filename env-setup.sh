@@ -8,6 +8,7 @@
 set -e # Exit on fail
 set -x # Print command before execution
 
+unalias cp
 
 # Get required packages
 apt-get update
@@ -18,12 +19,12 @@ chsh -s $(which zsh)
 bash install.sh
 
 
-# Install oh-my-tmux
-git clone https://github.com/gpakosz/.tmux.git
-ln -s -f .tmux/.tmux.conf
-cp .tmux/.tmux.conf.local .
+# Copy oh-my-tmux configuration
+cp -f .tmux.conf ~/.tmux.conf
+cp -f .tmux.conf.local ~/.tmux.conf.local
 
 # Install zsh-autosuggestions
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
-echo "Add zsh-autosuggestions to plugin list in .zshrc"
-echo "\tvim ~/.zshrc"
+
+# Copy zsh configuration
+cp -f .zshrc ~/.zshrc
